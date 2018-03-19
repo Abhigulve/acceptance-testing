@@ -4,22 +4,17 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 
-public class DomManupulation
-{
+public class DomManupulation {
 
-    public DomManupulation open(String url)
-    {
+    public DomManupulation open(String url) {
         Selenide.open(url);
         return this;
     }
 
-    public DomManupulation action(String id, String value, String events)
-    {
-        switch (events)
-        {
+    public DomManupulation action(String id, String value, String events) {
+        switch (events) {
             case "CLICK":
                 $(By.id(id)).click();
                 return this;
@@ -33,10 +28,8 @@ public class DomManupulation
         }
     }
 
-    public SelenideElement testCaseAnalyser(String id, String visible)
-    {
-        switch (visible)
-        {
+    public SelenideElement testCaseAnalyser(String id, String visible) {
+        switch (visible) {
             case "VISIBLE":
                 return $(By.id(id)).shouldHave(Condition.visible);
 

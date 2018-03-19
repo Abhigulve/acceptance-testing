@@ -1,4 +1,4 @@
-/*
+package com.acceptance.core;/*
 package com.acceptance.core;
 
 import com.acceptance.test.user.UserSuite;
@@ -21,7 +21,8 @@ public class MasterSuite {
      * 1. UserSuite - Tests relating to Login, User Profile
      * 2. SchdulingSuite - Tests relating to Searching, Booking Appointments
      *
-     *//*
+     */
+/*
 
 }
 */
