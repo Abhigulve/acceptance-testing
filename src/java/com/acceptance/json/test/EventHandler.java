@@ -13,29 +13,32 @@ import java.util.Map;
 
 public class EventHandler extends BaseTest {
     static JsonManipulator jr;
-    DomManupulation domManupulation;
+    DomManipulation domManipulation;
 
     @BeforeEach
     public void setUp() {
         jr = JsonManipulator.getJsonReader("/home/gulve/acceptance_test/automation-test-with-json/src/java/com/acceptance/json/test/Login.json");
-        domManupulation = new DomManupulation();
+        domManipulation = new DomManipulation();
     }
 
     @TestFactory
     public Collection<DynamicTest> TestInitiator() {
-        domManupulation.open(jr.getManupulatorBean().getUrl());
+        domManipulation.open(jr.getManupulatorBean().getUrl());
+        String testName = jr.getManupulatorBean().getTestName();
         List<List<Map<String, String>>> list = jr.getManupulatorBean().getList();
         Collection<DynamicTest> dynamicTests = new ArrayList<>();
+
         for (int j = 0; j < list.size(); j++) {
-            domManupulation.open(jr.getManupulatorBean().getUrl());
+            domManipulation.open(jr.getManupulatorBean().getUrl());
             List<Map<String, String>> testCase = list.get(j);
             int i = 0;
-            for (Map<String, String> map : testCase) {
-                domManupulation.action(map.get("id").toString(), map.get("value"), map.get("event").toUpperCase());
+
+            for (int values = 1; values < testCase.size(); values++) {
+                Map<String, String> map = testCase.get(values);
+                domManipulation.action(map.get("id").toString(), map.get("value"), map.get("event").toUpperCase());
                 i++;
                 if (i == (testCase.size())) {
-                    String testName = "Test" + map.get("testname");
-                    DynamicTest dTest = DynamicTest.dynamicTest(testName, ()->domManupulation.testCaseAnalyser(map.get("id").toString(), map.get("condition").toUpperCase()));
+                    DynamicTest dTest = DynamicTest.dynamicTest(testName, ()->domManipulation.testCaseAnalyser(map.get("id").toString(), map.get("condition").toUpperCase()));
                     dynamicTests.add(dTest);
                 }
             }

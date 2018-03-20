@@ -6,14 +6,14 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
-public class DomManupulation {
+public class DomManipulation {
 
-    public DomManupulation open(String url) {
+    public DomManipulation open(String url) {
         Selenide.open(url);
         return this;
     }
 
-    public DomManupulation action(String id, String value, String events) {
+    public DomManipulation action(String id, String value, String events) {
         switch (events) {
             case "CLICK":
                 $(By.id(id)).click();

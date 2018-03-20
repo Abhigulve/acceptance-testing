@@ -4,6 +4,7 @@ import com.acceptance.json.test.bean.ManupulatorBean;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,9 +15,8 @@ import java.util.Map;
 
 public class JsonManipulator {
 
-    private static JsonManipulator jsonReader = null;
+    private static JsonManipulator jsonReader;
     ManupulatorBean manupulatorBean = ManupulatorBean.beanFactory();
-    private String fileName;
 
     private JsonManipulator(String fileName) {
         jsonToMapMapping(fileName);
@@ -51,11 +51,13 @@ public class JsonManipulator {
         }
 
         for (int j = 0; j < jo.size(); j++) {
-            List<Map<String, String>> mapList = new ArrayList<Map<String, String>>();
+            List<Map<String, String>> mapList = new ArrayList<>();
             for (int i = 0; i < jo.get(j).getAsJsonArray().size(); i++) {
                 Map<String, String> map;
                 if (j == 0 && i == 0) {
                     manupulatorBean.setUrl(jo.get(j).getAsJsonArray().get(i).getAsJsonObject().get("url").getAsString());
+                    manupulatorBean.setTestName(jo.get(j).getAsJsonArray().get(i).getAsJsonObject().get("testname").getAsString());
+
                 }
                 Type type = new TypeToken<Map<String, String>>() {
                 }.getType();

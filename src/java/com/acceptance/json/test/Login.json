@@ -2,6 +2,9 @@
   [
     {
       "url": "/login",
+      "testname": "loginPass"
+    },
+    {
       "id": "login_field",
       "event": "SETVALUE",
       "value": "abhigulve"
@@ -20,8 +23,7 @@
       "id": "login-error",
       "value": "",
       "event": "",
-      "condition": "NOTVISIBLE",
-      "testname": "loginPass"
+      "condition": "NOTVISIBLE"
     }
   ],
   [
