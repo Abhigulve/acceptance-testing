@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.acceptance</groupId>
     <artifactId>acceptance-tests</artifactId>
     <version>1.0</version>
@@ -27,7 +26,6 @@
             <artifactId>selenide</artifactId>
             <version>4.5.1</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
