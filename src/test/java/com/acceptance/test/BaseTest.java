@@ -15,7 +15,7 @@ public abstract class BaseTest
 
         //switch to local drivers folder using File.exists
        // System.setProperty("webdriver.gecko.driver", "/Users/mmckenzie/development/branches/radix-dash-all/acceptance-tests/drivers/geckodriver");
-        System.setProperty("webdriver.chrome.driver", "/home/gulve/acceptance_test/automation-test-with-json/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
        // System.setProperty("webdriver.chrome.driver", "your/driver/path");
         //System.setProperty("webdriver.firefox.marionette", "/Users/mmckenzie/development/branches/radix-dash-all/acceptance-tests/drivers/geckodriver");
     }
