@@ -1,6 +1,7 @@
-package com.acceptance.json.test;
+package com.acceptance.dommanupulation;
 
-import com.acceptance.test.BaseTest;
+import com.acceptance.config.BaseTest;
+import com.acceptance.json.JsonManipulator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;

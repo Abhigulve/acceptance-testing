@@ -1,4 +1,4 @@
-package com.acceptance.test;
+package com.acceptance.config;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browser;

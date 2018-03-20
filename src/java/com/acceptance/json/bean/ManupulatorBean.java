@@ -1,4 +1,4 @@
-package com.acceptance.json.test.bean;
+package com.acceptance.json.bean;
 
 import java.util.ArrayList;
 import java.util.List;

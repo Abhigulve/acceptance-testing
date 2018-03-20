@@ -1,4 +1,4 @@
-package com.acceptance.json.test;
+package com.acceptance.dommanupulation;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;

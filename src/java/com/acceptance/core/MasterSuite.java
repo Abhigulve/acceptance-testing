@@ -1,8 +1,8 @@
 package com.acceptance.core;/*
 package com.acceptance.core;
 
-import com.acceptance.test.user.UserSuite;
-import com.acceptance.test.scheduling.SchedulingSuite;
+import com.acceptance.config.user.UserSuite;
+import com.acceptance.config.scheduling.SchedulingSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

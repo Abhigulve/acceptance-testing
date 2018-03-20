@@ -1,4 +1,4 @@
-package com.acceptance.test.util;
+package com.acceptance.util;
 
 import java.util.GregorianCalendar;
 

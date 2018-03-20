@@ -25,30 +25,5 @@
       "event": "",
       "condition": "NOTVISIBLE"
     }
-  ],
-  [
-    {
-      "url": "/mapshare/tools/",
-      "id": "IDToken1",
-      "event": "SETVALUE",
-      "value": "sis.lebanon@gmail.com"
-    },
-    {
-      "id": "IDToken2",
-      "event": "SETVALUE",
-      "value": "sis2011"
-    },
-    {
-      "id": "loginButton",
-      "event": "click",
-      "value": ""
-    },
-    {
-      "id": "login-error",
-      "value": "",
-      "event": "",
-      "condition": "NOTVISIBLE",
-      "testname": "loginPass"
-    }
   ]
 ]

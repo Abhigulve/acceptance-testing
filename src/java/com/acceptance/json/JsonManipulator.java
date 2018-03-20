@@ -1,6 +1,6 @@
-package com.acceptance.json.test;
+package com.acceptance.json;
 
-import com.acceptance.json.test.bean.ManupulatorBean;
+import com.acceptance.json.bean.ManupulatorBean;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
