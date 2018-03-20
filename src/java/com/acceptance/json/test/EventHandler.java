@@ -17,7 +17,7 @@ public class EventHandler extends BaseTest {
 
     @BeforeEach
     public void setUp() {
-        jr = JsonManipulator.getJsonReader("/home/gulve/acceptance_test/automation-test-with-json/src/java/com/acceptance/json/test/Login.json");
+        jr = JsonManipulator.getJsonReader("../resources/Login.json");
         domManipulation = new DomManipulation();
     }
 

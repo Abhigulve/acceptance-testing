@@ -11,10 +11,10 @@ public class ManupulatorBean {
     private String testName;
 
     public ManupulatorBean() {
-        list = new ArrayList<List<Map<String, String>>>();
+        list = new ArrayList<>();
     }
 
-    /*
+    /**
     * No need to create multiple object so we are going with singleton
     */
     public static ManupulatorBean beanFactory() {
