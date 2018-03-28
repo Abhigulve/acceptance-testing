@@ -6,13 +6,12 @@ import com.acceptance.interfaces.Event;
 /**
  * @author Abhijeet Gulve
  */
-public class SetValueEvent extends AbstractEvent {
+public class SetValueEvent  {
 
     public SetValueEvent(String id, String value) {
-        super(id, value);
+
     }
 
-    @Override
     public Event action() {
 
         return null;
