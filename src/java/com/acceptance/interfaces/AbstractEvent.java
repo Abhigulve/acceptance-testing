@@ -1,22 +1,14 @@
 package com.acceptance.interfaces;
 
-import com.codeborne.selenide.Selenide;
+import com.acceptance.entity.Attributes;
 
 /**
  * @author Abhijeet Gulve
  */
 public abstract class AbstractEvent implements Event {
-    private String id;
-    private String value;
+   private Attributes attributeList;
 
-
-    public AbstractEvent(String id, String value) {
-        this.id = id;
-        this.value = value;
-    }
-
-    public Event open(String url) {
-        Selenide.open(url);
-        return this;
+    public AbstractEvent(Attributes attributeList) {
+        this.attributeList = attributeList;
     }
 }

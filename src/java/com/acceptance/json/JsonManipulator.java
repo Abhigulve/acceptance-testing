@@ -1,11 +1,18 @@
 package com.acceptance.json;
 
+import com.acceptance.entity.Attribute;
+import com.acceptance.entity.Attributes;
+import com.acceptance.entity.AttributesList;
 import com.acceptance.json.bean.ManupulatorBean;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -70,6 +77,67 @@ public class JsonManipulator {
 
     public ManupulatorBean getManupulatorBean() {
         return this.manupulatorBean;
+    }
+
+
+    public void getComponentActionJson(String fileName){
+        //JsonArray jo = jsonReader(fileName);
+
+        String str = stringReader(fileName);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
+        try {
+            AttributesList attributesList =  mapper.readValue(str.toString(), AttributesList.class);
+            System.out.println(attributesList.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+       // JsonManipulator manipulator = new JsonManipulator("resources/Login.json");
+       // manipulator.getComponentActionJson("resources/Login.json");
+
+        ObjectMapper om = new ObjectMapper();
+
+        Attribute attr = new Attribute("Id","a");
+        Attribute attr1 = new Attribute("value","a");
+        Attribute attr2 = new Attribute("event","a");
+
+        List list = new ArrayList();
+        list.add(attr);
+        list.add(attr1);
+        list.add(attr2);
+        Attributes attributes = new Attributes(list);
+
+       List list1 =  new ArrayList<Attributes>();
+        list1.add(attributes);
+        AttributesList attributesList = new AttributesList(list1);
+
+        try {
+            String json = om.writeValueAsString(attributesList);
+            System.out.println(json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String stringReader(String filePath){
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            stringBuilder.append(br.readLine());
+            while (br.readLine() != null){
+                stringBuilder.append(br.readLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
     }
 
 }
